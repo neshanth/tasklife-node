@@ -9,7 +9,7 @@ const User = require("./models/User");
 
 // Middleware to parse JSON and cookies
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // Routes
 app.use("/api/v1/auth", authRoutes);
