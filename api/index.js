@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT;
 const { authRoutes } = require("./routes");
+const { connectDB } = require("./config/database");
+const User = require("./models/User");
 
 // Middleware to parse JSON
 app.use(express.json());
@@ -15,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 const init = async () => {
+  await connectDB();
   app.listen(port, () => console.log(`Server running on port ${port}`));
 };
 
