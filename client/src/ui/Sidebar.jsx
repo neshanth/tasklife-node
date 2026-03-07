@@ -1,17 +1,33 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/projects", label: "Projects" },
+];
 
 export default function Sidebar() {
   return (
     <aside className="w-64 bg-[#f3f4f6] text-black p-4">
-      <h2 className="text-xl font-bold mb-4">Dashboard</h2>
+      <div className="mb-4">
+        <img src={logo} alt="Logo" width={122} />
+      </div>
       <nav>
-        <ul>
-          <li className="mb-2">
-            <Link to="/" className="block p-2 rounded hover:bg-gray-200">Home</Link>
-          </li>
-          <li className="mb-2">
-            <Link to="/projects" className="block p-2 rounded hover:bg-gray-200">Projects</Link>
-          </li>
+        <ul className="flex flex-col gap-1">
+          {links.map((link) => (
+            <li key={link.to}>
+              <NavLink
+                to={link.to}
+                className={({ isActive }) =>
+                  `block py-4 px-4 rounded hover:bg-white ${
+                    isActive ? "bg-white" : ""
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>
