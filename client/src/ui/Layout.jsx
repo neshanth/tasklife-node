@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import DashboardHeader from "./DashboardHeader";
 
 export default function Layout() {
   return (
     <div className="flex h-screen">
       <Sidebar />
-      <main className="w-full p-4">
+      <main className="w-full">
+        <DashboardHeader />
         <Outlet />
       </main>
     </div>

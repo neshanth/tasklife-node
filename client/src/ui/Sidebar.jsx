@@ -12,7 +12,7 @@ export default function Sidebar() {
       <div className="mb-4">
         <img src={logo} alt="Logo" width={122} />
       </div>
-      <nav className="flex-1">
+      <nav className="flex-1 pt-4">
         <ul className="flex flex-col gap-1">
           {links.map((link) => (
             <li key={link.to}>
