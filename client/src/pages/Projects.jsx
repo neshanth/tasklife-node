@@ -1,3 +1,5 @@
+import PageTitle from "../ui/PageTitle";
+
 export default function Projects() {
-  return <h1>Projects</h1>;
+  return <PageTitle title="Projects" />;
 }
