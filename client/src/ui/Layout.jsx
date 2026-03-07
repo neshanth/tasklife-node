@@ -8,7 +8,9 @@ export default function Layout() {
       <Sidebar />
       <main className="w-full">
         <DashboardHeader />
-        <Outlet />
+        <div className="app-container p-4">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
