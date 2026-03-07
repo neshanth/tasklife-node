@@ -8,18 +8,18 @@ const links = [
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-[#f3f4f6] text-black p-4">
+    <aside className="w-64  bg-[#f3f4f6] text-black p-4 flex flex-col h-full">
       <div className="mb-4">
         <img src={logo} alt="Logo" width={122} />
       </div>
-      <nav>
+      <nav className="flex-1">
         <ul className="flex flex-col gap-1">
           {links.map((link) => (
             <li key={link.to}>
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `block py-4 px-4 rounded hover:bg-white ${
+                  `block py-4 px-4 rounded hover:bg-white font-medium  ${
                     isActive ? "bg-white" : ""
                   }`
                 }
@@ -30,6 +30,9 @@ export default function Sidebar() {
           ))}
         </ul>
       </nav>
+      <div className="mt-auto">
+        <p className="py-4 px-4 rounded hover:bg-white font-medium">Logout</p>
+      </div>
     </aside>
   );
 }
